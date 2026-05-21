@@ -1,0 +1,17 @@
+services:
+  db:
+    image: timescale/timescaledb:latest-pg15
+
+    environment:
+       POSTGRES_USER:  trader
+       POSTGRES_DB: trading_db
+       POSTGRES_PASSWORD: trading123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+     
+
+
+volumes:
+  postgres_data:
