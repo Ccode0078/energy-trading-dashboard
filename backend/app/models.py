@@ -23,4 +23,4 @@ class Trade(Base):
     price: Mapped[float] = mapped_column(Float, nullable=False)
     book: Mapped[str] = mapped_column(String(50), nullable=False)
     status: Mapped[str] = mapped_column(String(20), default="OPEN")
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

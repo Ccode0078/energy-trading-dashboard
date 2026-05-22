@@ -25,3 +25,5 @@ async def create_instrument(instrument: schemas.InstrumentCreate, db: AsyncSessi
 async def get_instruments(db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(models.Instrument))
     return result.scalars().all()
+
+
